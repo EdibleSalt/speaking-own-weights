@@ -55,33 +55,10 @@ legend([b(1) b(2) b(3) hL24], {'input-embed','unembedding','mid-hidden (L12)','p
 title('LoRA bridges the gap across models (held-out)','FontSize',FS);
 grid on; box off; save_fig(f2,'fig2_bridge',outdir);
 
-%% Fig 3 —— 解构: (a) 切断激活后的干净残余  (b) 剔除词频后的偏相关
-f3 = figure('Color','w','Position',[100 100 820 360]);
-subplot(1,2,1);
-res = [0.156 0.178 0.050 0.049]; rerr=[0.130 0.090 0.080 0.060];
-labr= {'OLMo syn','OLMo def','pythia syn','pythia def'};
-cr = [0.75 0.35 0.20; 0.85 0.55 0.25; 0.55 0.65 0.80; 0.70 0.78 0.88];
-hold on;
-for i=1:4; bar(i,res(i),0.6,'FaceColor',cr(i,:)); end
-errorbar(1:4,res,rerr,'k','LineStyle','none','LineWidth',1.1,'CapSize',7);
-yline(0.29,'--k','LineWidth',1.3);
-text(1.5,0.31,'geometry baseline (OLMo 0.29)','FontSize',FS-2);
-set(gca,'XTick',1:4,'XTickLabel',labr,'FontSize',FS-2); xtickangle(20);
-ylabel('clean-subset residual RSA','FontSize',FS-1); ylim([-0.05 0.40]);
-title('(a) After cutting the activation shortcut','FontSize',FS-1);
-grid on; box off;
-subplot(1,2,2);
-pc = [0.605 0.200]; pcerr=[0.060 0.200];
-hold on;
-bar(1,pc(1),0.5,'FaceColor',[0.75 0.35 0.20]);
-bar(2,pc(2),0.5,'FaceColor',[0.55 0.65 0.80]);
-errorbar(1:2,pc,pcerr,'k','LineStyle','none','LineWidth',1.1,'CapSize',8);
-set(gca,'XTick',1:2,'XTickLabel',{'OLMo','pythia'},'FontSize',FS-1);
-ylabel('partial r (pred, L2 | log-freq)','FontSize',FS-1); ylim([0 0.75]);
-title('(b) After removing word frequency','FontSize',FS-1);
-grid on; box off;
-sgtitle('Decomposition: a real but limited residual (OLMo>0, pythia\approx0)','FontSize',FS);
-save_fig(f3,'fig3_decompose',outdir);
+%% Fig 3 (old two-panel 'decompose') RETIRED: split into the layer-1 residual
+%% figure and the layer-2 three-panel figure -> see make_fig_layer12.m
+%% (outputs fig_g1_residual / fig_g2_semantic). Kept out of this script so
+%% rerunning it cannot regenerate the superseded fig3_decompose.
 
 %% Fig 5 (出现顺序) —— shared readout: 单 adapter 读两个正交空间, OLMo vs pythia (双 panel)
 % 每个通道与"它自己的" swap 对照并列: input-embed↔swap_input_vs_lh, unembedding↔swap_output_vs_ie。
