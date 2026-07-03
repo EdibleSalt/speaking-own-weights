@@ -1,0 +1,20 @@
+[G3] tokenizers...
+[G3] 双向交集词数 = 300 (要求 ≥ 300)
+[G3] loading model_a = <repo_root>/models\OLMo-2-0425-1B-Instruct ...
+[G3] loading model_b = <repo_root>/models\pythia-1.4b ...
+[G3] embedding shapes: A_ie=(300, 2048) A_lh=(300, 2048) B_ie=(300, 2048) B_lh=(300, 2048)
+[G3] computing RDMs (cosine)...
+
+[G3] === RDM Spearman RSA ===
+  A_ie__B_ie              : +0.5370
+  A_lh__B_lh              : +0.8002
+  A_ie__B_lh              : +0.2269
+  A_lh__B_ie              : +0.1584
+  A_ie__A_lh              : +0.1371
+  B_ie__B_lh              : +0.2879
+
+[G3] === per-token cosine (sanity, 同模型 ie↔lh) ===
+  A_ie_vs_lh              : +0.0367
+  B_ie_vs_lh              : -0.0007
+
+[G3] summary -> 实验结果\data\G3_cross_rdm\olmo_vs_pythia_s0/summary.json

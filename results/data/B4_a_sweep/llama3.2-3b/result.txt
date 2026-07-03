@@ -1,0 +1,19 @@
+[env] device=cuda  model=<repo_root>/models\Llama-3.2-3B-Instruct
+[load] tokenizer + model ...
+[words] 253 clean single-token words (e.g. ['cat', 'dog', 'horse', 'cow', 'pig', 'sheep', 'lion', 'tiger', 'bear', 'wolf', 'fox', 'deer'])
+[real] embedding matrix shape = (253, 3072)
+
+[run] 3 seeds x (k=5 samples/word, max_new_tokens=200)
+  seed=0: kept=191 avg_samp=1.73/5 fabcos=0.061  RSA=+0.0070 z=+0.76 p=0.4498
+  seed=1: kept=175 avg_samp=1.73/5 fabcos=0.105  RSA=-0.0050 z=-0.36 p=0.7096
+  seed=2: kept=212 avg_samp=1.67/5 fabcos=0.051  RSA=-0.0151 z=-1.85 p=0.0595
+
+==================== SUMMARY (multi-seed) ====================
+  seeds                  = 3
+  mean RSA               = -0.0044  (sd 0.0090)
+  RSA range              = [-0.0151, +0.0070]
+  seeds with p<0.05      = 0/3
+  p values               = ['0.4498', '0.7096', '0.0595']
+  --> 未复现 (无信号)
+=============================================================
+[save] -> <repo_root>/results\data\B4_a_sweep\llama3.2-3b/summary.json + raw/ (generations.jsonl, vectors, real_embeddings)

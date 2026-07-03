@@ -1,0 +1,50 @@
+[env] device=cuda model=<repo_root>/models\OLMo-2-0425-1B-Instruct
+[env] outdir=<repo_root>/results\data\C6_mixed_target\olmo2-1b_r70_tag_s0  ratio=0.7  prompt_style=tag
+  [闸 4 snap] <repo_root>/models\OLMo-2-0425-1B-Instruct\model.safetensors mtime=1780576735.8232336
+  [ok] untied 模型 (tie_word_embeddings=False), 两目标空间正交
+[闸 1] base 权重 snapshot (训前):
+  input_embed: a7f318e0157f8cfd
+  lm_head: 1802061ffaa0aeb0
+  block_first: 2383a9883cb1a01c
+  block_last: eb47c0bfd6a8e17c
+  [sanity] per-token cos(input_embed, lm_head) 均值 = 0.0341 (应 ≈ 0)
+[words] train=400 (ie=280 lh=120) test(held-out)=120  ratio=0.7 prompt_style=tag
+
+[eval] base (zero-shot) held-out  type=input ...
+  base held-out (input→ie): parse=0.01 rsa=None (parse 应 ≈ 0)
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=olmo2, target_modules=['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 224 个 LoRA 参数可学
+  trainable params=24,117,248  embed.requires_grad=False
+[train] 400 examples (混合 ie/lh), 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=1.0146
+  [train] epoch 2/15  loss=0.9853
+  [train] epoch 3/15  loss=0.9771
+  [train] epoch 4/15  loss=0.9688
+  [train] epoch 5/15  loss=0.9535
+  [train] epoch 6/15  loss=0.9266
+  [train] epoch 7/15  loss=0.8768
+  [train] epoch 8/15  loss=0.7750
+  [train] epoch 9/15  loss=0.6105
+  [train] epoch 10/15  loss=0.4147
+  [train] epoch 11/15  loss=0.2329
+  [train] epoch 12/15  loss=0.1186
+  [train] epoch 13/15  loss=0.0582
+  [train] epoch 14/15  loss=0.0362
+  [train] epoch 15/15  loss=0.0255
+  [save] final adapter -> <repo_root>/results\data\C6_mixed_target\olmo2-1b_r70_tag_s0\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out: type=input→ie, type=output→lh + 互换控制 ...
+  ie_heldout (input→ie) : parse=1.00 rsa=0.4260088147990041 p=0.0004997501249375312
+  lh_heldout (output→lh): parse=1.00 rsa=0.19954039301423437 p=0.0004997501249375312
+  swap_input_vs_lh  (input→lh) : rsa=0.09826635424209167  (应 < ie_heldout 若模型用类型信号)
+  swap_output_vs_ie (output→ie): rsa=0.13318279083843312  (应 < lh_heldout 若模型用类型信号)
+
+[save] -> <repo_root>/results\data\C6_mixed_target\olmo2-1b_r70_tag_s0\summary.json + raw/ + adapter/
+[判据] ie_heldout 与 lh_heldout 同时显著 > swap 对应 + base -> 一个 adapter 能同时读两个正交参数空间

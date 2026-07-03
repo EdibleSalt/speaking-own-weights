@@ -1,0 +1,19 @@
+[env] device=cuda  model=<repo_root>/models\SmolLM3-3B
+[load] tokenizer + model ...
+[words] 253 clean single-token words (e.g. ['cat', 'dog', 'horse', 'cow', 'pig', 'sheep', 'lion', 'tiger', 'bear', 'wolf', 'fox', 'deer'])
+[real] embedding matrix shape = (253, 2048)
+
+[run] 3 seeds x (k=5 samples/word, max_new_tokens=200)
+  seed=0: kept= 12 avg_samp=1.00/5 fabcos=0.372  RSA=+0.0947 z=+0.49 p=0.6322
+  seed=1: kept=  9 avg_samp=1.11/5 fabcos=0.421  RSA=+0.2793 z=+1.35 p=0.1994
+  seed=2: kept= 14 avg_samp=1.00/5 fabcos=0.206  RSA=+0.0735 z=+0.70 p=0.4813
+
+==================== SUMMARY (multi-seed) ====================
+  seeds                  = 3
+  mean RSA               = +0.1492  (sd 0.0924)
+  RSA range              = [+0.0735, +0.2793]
+  seeds with p<0.05      = 0/3
+  p values               = ['0.6322', '0.1994', '0.4813']
+  --> 未复现 (无信号)
+=============================================================
+[save] -> <repo_root>/results\data\B4_a_sweep\smollm3-3b/summary.json + raw/ (generations.jsonl, vectors, real_embeddings)

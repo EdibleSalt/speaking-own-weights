@@ -1,0 +1,35 @@
+{
+  "model": "<repo_root>/models\\OLMo-2-0425-1B-Instruct",
+  "train_vocab": "random",
+  "target_mode": "real",
+  "target_source": "hidden",
+  "target_layer": 16,
+  "target_prompt": "chat",
+  "target_model": null,
+  "seed": 0,
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "base_heldout": {
+    "n_kept": 0,
+    "parse_rate": 0.0
+  },
+  "lora_trainable_params": 24117248,
+  "embed_frozen": true,
+  "ft_heldout": {
+    "n_kept": 120,
+    "parse_rate": 1.0,
+    "per_word_pearson_mean": 0.18243137412767083,
+    "rsa": 0.17853219097068015,
+    "rsa_p": 0.0004997501249375312
+  },
+  "ft_trained": {
+    "n_kept": 400,
+    "parse_rate": 1.0,
+    "per_word_pearson_mean": 0.8892325684877536,
+    "rsa": 0.8318687692694369,
+    "rsa_p": 0.0004997501249375312
+  }
+}

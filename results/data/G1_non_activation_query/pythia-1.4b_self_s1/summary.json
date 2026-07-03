@@ -1,0 +1,41 @@
+{
+  "model": "<repo_root>/models\\pythia-1.4b",
+  "train_vocab": "random",
+  "target_mode": "real",
+  "target_source": "input_embed",
+  "target_layer": null,
+  "target_prompt": null,
+  "target_model": null,
+  "target_metric": "pca",
+  "eval_query_mode": "self",
+  "query_dict_path": null,
+  "seed": 1,
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "base_heldout": {
+    "n_kept": 98,
+    "parse_rate": 0.8166666666666667,
+    "per_word_pearson_mean": 0.00788679476953738,
+    "rsa": 0.05690778276117755,
+    "rsa_p": 0.0014992503748125937
+  },
+  "lora_trainable_params": 25165824,
+  "embed_frozen": true,
+  "ft_heldout": {
+    "n_kept": 120,
+    "parse_rate": 1.0,
+    "per_word_pearson_mean": 0.21130338266568857,
+    "rsa": 0.24190287078522985,
+    "rsa_p": 0.0004997501249375312
+  },
+  "ft_trained": {
+    "n_kept": 399,
+    "parse_rate": 0.9975,
+    "per_word_pearson_mean": 0.43208480082739953,
+    "rsa": 0.467596334701646,
+    "rsa_p": 0.0004997501249375312
+  }
+}

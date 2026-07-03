@@ -1,0 +1,47 @@
+[env] device=cuda model=<repo_root>/models\pythia-1.4b train_vocab=random
+[env] outdir=<repo_root>/results\data\G1_non_activation_query\pythia-1.4b_definition_clean_s0
+[G1] eval_query_mode=definition  query_dict_path=<repo_root>/materials\G1_queries\pythia_definition_clean.json  覆盖 14908 词
+  [闸 4 snap] <repo_root>/models\pythia-1.4b\model.safetensors mtime=1780568143.8790128
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 387f09b51f9aaa6b
+  lm_head: 15c35b347e6fa7e8
+  block_first: 1a587464e531c549
+  block_last: 5b61b835d198d0f1
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base (zero-shot) held-out ...
+  base held-out: parse=0.49 pearson=-0.002090967033977769 rsa=0.035699517794979194 p=0.12993503248375812
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=gpt_neox, target_modules=['query_key_value', 'dense', 'dense_h_to_4h', 'dense_4h_to_h']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 192 个 LoRA 参数可学
+  trainable params=25,165,824  embed.requires_grad=False
+[train] 400 examples, 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=0.8169
+  [train] epoch 2/15  loss=0.7911
+  [train] epoch 3/15  loss=0.7852
+  [train] epoch 4/15  loss=0.7814
+  [train] epoch 5/15  loss=0.7733
+  [train] epoch 6/15  loss=0.7672
+  [train] epoch 7/15  loss=0.7597
+  [train] epoch 8/15  loss=0.7426
+  [train] epoch 9/15  loss=0.7222
+  [train] epoch 10/15  loss=0.6997
+  [train] epoch 11/15  loss=0.6642
+  [train] epoch 12/15  loss=0.6027
+  [train] epoch 13/15  loss=0.5371
+  [train] epoch 14/15  loss=0.4551
+  [train] epoch 15/15  loss=0.3611
+  [save] final adapter -> <repo_root>/results\data\G1_non_activation_query\pythia-1.4b_definition_clean_s0\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=0.94 pearson=0.13086710862632206 rsa=0.1345436644351284 p=0.0004997501249375312
+  FT trained : parse=0.96 pearson=0.3963403510510531 rsa=0.4436788963619917 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\G1_non_activation_query\pythia-1.4b_definition_clean_s0/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

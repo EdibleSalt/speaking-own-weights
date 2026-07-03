@@ -1,0 +1,31 @@
+[env] device=cuda model=<repo_root>/models\OLMo-2-0425-1B-Instruct train_vocab=random
+[env] outdir=<repo_root>/results\data\C1_lora_finetune\olmo2-1b_random_r64_ep30_n800_s0
+  [闸 4 snap] <repo_root>/models\OLMo-2-0425-1B-Instruct\model.safetensors mtime=1780576735.8232336
+[闸 1] base 权重 snapshot (训前):
+  input_embed: a7f318e0157f8cfd
+  lm_head: 1802061ffaa0aeb0
+  block_first: 2383a9883cb1a01c
+  block_last: eb47c0bfd6a8e17c
+[resume] 从 <repo_root>/results\data\C1_lora_finetune\olmo2-1b_random_r64_ep30_n800_s0\raw\pca_targets.npz 加载词集 + PCA basis + 训练 target
+[words] train=800 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base held-out 已跑过 (<repo_root>/results\data\C1_lora_finetune\olmo2-1b_random_r64_ep30_n800_s0\raw\gen_base_heldout.jsonl), 从 raw 重算 metrics 补 results
+  base held-out: parse=0.00 pearson=None rsa=None p=None
+
+[train] 从 <repo_root>/results\data\C1_lora_finetune\olmo2-1b_random_r64_ep30_n800_s0\adapter\ep29 续训 (epoch 30..30)
+  [闸 2 ok] base 全冻结, 仅 224 个 LoRA 参数可学
+  [resume] _opt_state.pt + _rng_state.pt 已加载 (bit-exact 续训)
+  [resume] AdamW state + numpy/torch/cuda RNG 已 restore, 续训 bit-exact (附录 J)
+  [train] epoch 30/30  loss=0.0158
+  [save] final adapter -> <repo_root>/results\data\C1_lora_finetune\olmo2-1b_random_r64_ep30_n800_s0\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=1.00 pearson=0.6036498433463339 rsa=0.5952538739939828 p=0.0004997501249375312
+  FT trained : parse=1.00 pearson=0.976168729475739 rsa=0.964349784770099 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\C1_lora_finetune\olmo2-1b_random_r64_ep30_n800_s0/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

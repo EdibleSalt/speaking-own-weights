@@ -1,0 +1,28 @@
+[env] device=cuda model=Qwen/Qwen2.5-0.5B-Instruct
+[words] 253 single-token words; real dim=896
+[design] conditions=['default', 'innate', 'placebo']  seeds=3  k=4
+
+seed=0: common kept words across conditions = 171
+   default : RSA=+0.0154  z=+1.02  p=0.3168
+   innate  : RSA=-0.0118  z=-0.65  p=0.4963
+   placebo : RSA=-0.0197  z=-1.07  p=0.2884
+
+seed=1: common kept words across conditions = 161
+   default : RSA=+0.0313  z=+1.91  p=0.0540
+   innate  : RSA=-0.0150  z=-0.90  p=0.3543
+   placebo : RSA=+0.0008  z=+0.04  p=0.9705
+
+seed=2: common kept words across conditions = 171
+   default : RSA=+0.0247  z=+1.66  p=0.0975
+   innate  : RSA=+0.0147  z=+0.93  p=0.3463
+   placebo : RSA=+0.0353  z=+2.06  p=0.0385
+
+==================== SUMMARY ====================
+cond        mean_RSA      sd  sig/seeds  p-values
+default      +0.0238  0.0065      0/3   ['0.3168', '0.0540', '0.0975']
+innate       -0.0040  0.0133      0/3   ['0.4963', '0.3543', '0.3463']
+placebo      +0.0054  0.0227      1/3   ['0.2884', '0.9705', '0.0385']
+=================================================
+[save] -> <repo_root>/results/data/A3-1_persona_ablation/summary.json + raw/ (generations_*, vectors_*, real_embeddings)
+判读: innate 稳定 > default 且 placebo 没抬 -> persona 真有结构效应;
+      innate≈placebo 都变 -> 只是输出风格变, 非自我认知; 都≈0 -> persona 无效。

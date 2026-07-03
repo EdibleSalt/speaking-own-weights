@@ -1,0 +1,47 @@
+[env] device=cuda model=<repo_root>/models\OLMo-2-0425-1B train_vocab=random
+[env] outdir=<repo_root>/results\data\C2_hard_target\olmo2-1b-base_random_real_lmhead_s2
+  [闸 4 snap] <repo_root>/models\OLMo-2-0425-1B\model-00001-of-00002.safetensors mtime=1781609532.2168226
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 656ad72dcc9ffae1
+  lm_head: 90a78d5163b8017d
+  block_first: eae3841a1f206f72
+  block_last: b47d30014da2d1c5
+  [C2] target_source=lm_head (untied, lm_head ≠ input_embed)
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base (zero-shot) held-out ...
+  base held-out: parse=0.55 pearson=0.21438319244211115 rsa=-0.020229212511009998 p=0.4547726136931534
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=olmo2, target_modules=['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 224 个 LoRA 参数可学
+  trainable params=24,117,248  embed.requires_grad=False
+[train] 400 examples, 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=0.7366
+  [train] epoch 2/15  loss=0.7112
+  [train] epoch 3/15  loss=0.7075
+  [train] epoch 4/15  loss=0.7032
+  [train] epoch 5/15  loss=0.6963
+  [train] epoch 6/15  loss=0.6847
+  [train] epoch 7/15  loss=0.6685
+  [train] epoch 8/15  loss=0.6454
+  [train] epoch 9/15  loss=0.6160
+  [train] epoch 10/15  loss=0.5775
+  [train] epoch 11/15  loss=0.5218
+  [train] epoch 12/15  loss=0.4566
+  [train] epoch 13/15  loss=0.3741
+  [train] epoch 14/15  loss=0.2801
+  [train] epoch 15/15  loss=0.1829
+  [save] final adapter -> <repo_root>/results\data\C2_hard_target\olmo2-1b-base_random_real_lmhead_s2\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model-00001-of-00002.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=1.00 pearson=0.33389479610050987 rsa=0.42756869706229067 p=0.0004997501249375312
+  FT trained : parse=1.00 pearson=0.6144977972822678 rsa=0.8452521457353556 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\C2_hard_target\olmo2-1b-base_random_real_lmhead_s2/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

@@ -1,0 +1,43 @@
+{
+  "model": "<repo_root>/models\\OLMo-2-0425-1B-Instruct",
+  "experiment": "C6_mixed_target",
+  "ratio": 0.5,
+  "prompt_style": "tag",
+  "seed": 0,
+  "train_vocab": "random",
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "n_train_ie": 200,
+  "n_train_lh": 200,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "lora_trainable_params": 24117248,
+  "embed_frozen": true,
+  "ie_heldout": {
+    "n_kept": 120,
+    "parse_rate": 1.0,
+    "per_word_pearson_mean": 0.27176190792127286,
+    "rsa": 0.32515585179997586,
+    "rsa_p": 0.0004997501249375312
+  },
+  "lh_heldout": {
+    "n_kept": 120,
+    "parse_rate": 1.0,
+    "per_word_pearson_mean": 0.25923996397450605,
+    "rsa": 0.2867256292753856,
+    "rsa_p": 0.0004997501249375312
+  },
+  "swap_input_vs_lh": {
+    "rsa": 0.0847396401440756,
+    "rsa_p": 0.0004997501249375312,
+    "n_kept": 120,
+    "parse_rate": 1.0
+  },
+  "swap_output_vs_ie": {
+    "rsa": 0.1359496515844109,
+    "rsa_p": 0.0004997501249375312,
+    "n_kept": 120,
+    "parse_rate": 1.0
+  }
+}

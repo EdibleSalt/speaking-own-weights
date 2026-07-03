@@ -1,0 +1,46 @@
+[env] device=cuda model=<repo_root>/models\OLMo-2-0425-1B train_vocab=random
+[env] outdir=<repo_root>/results\data\C1_lora_finetune\olmo2-1b-base_random_s2
+  [闸 4 snap] <repo_root>/models\OLMo-2-0425-1B\model-00001-of-00002.safetensors mtime=1781609532.2168226
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 656ad72dcc9ffae1
+  lm_head: 90a78d5163b8017d
+  block_first: eae3841a1f206f72
+  block_last: b47d30014da2d1c5
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base (zero-shot) held-out ...
+  base held-out: parse=0.55 pearson=-0.2161990892904496 rsa=-0.027623338463310203 p=0.2563718140929535
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=olmo2, target_modules=['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 224 个 LoRA 参数可学
+  trainable params=24,117,248  embed.requires_grad=False
+[train] 400 examples, 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=1.1554
+  [train] epoch 2/15  loss=1.1299
+  [train] epoch 3/15  loss=1.1247
+  [train] epoch 4/15  loss=1.1194
+  [train] epoch 5/15  loss=1.1099
+  [train] epoch 6/15  loss=1.0936
+  [train] epoch 7/15  loss=1.0769
+  [train] epoch 8/15  loss=1.0436
+  [train] epoch 9/15  loss=0.9872
+  [train] epoch 10/15  loss=0.9035
+  [train] epoch 11/15  loss=0.7588
+  [train] epoch 12/15  loss=0.5766
+  [train] epoch 13/15  loss=0.3848
+  [train] epoch 14/15  loss=0.2110
+  [train] epoch 15/15  loss=0.0996
+  [save] final adapter -> <repo_root>/results\data\C1_lora_finetune\olmo2-1b-base_random_s2\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model-00001-of-00002.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=0.99 pearson=0.2798372820485503 rsa=0.3548599333556907 p=0.0004997501249375312
+  FT trained : parse=0.99 pearson=0.7005479988433155 rsa=0.6691403114232053 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\C1_lora_finetune\olmo2-1b-base_random_s2/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

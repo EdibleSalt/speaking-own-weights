@@ -1,0 +1,16 @@
+# Python 3.12. Versions below are the exact ones used for the paper.
+# torch was installed with CUDA 12.4 wheels:
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# Minimal subset for recomputing all reported numbers (tools/analyze_all.py, CPU only):
+#   numpy, scipy, nltk
+torch==2.6.0
+transformers==4.57.6
+peft==0.18.1
+numpy==2.4.6
+scipy==1.17.1
+nltk==3.9.4
+lm-eval==0.4.12
+safetensors==0.7.0
+huggingface_hub==0.35.3
+accelerate==1.13.0
+datasets==5.0.0

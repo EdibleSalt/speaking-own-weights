@@ -1,0 +1,39 @@
+{
+  "model": "<repo_root>/models\\pythia-1.4b",
+  "adapter": "<repo_root>/results\\data\\C4_cross_model_target\\pythia-1.4b_FT_to_olmo2-1b_ie_s0\\adapter\\final",
+  "tasks": [
+    "lambada_openai",
+    "hellaswag",
+    "piqa",
+    "arc_easy",
+    "winogrande"
+  ],
+  "scores": {
+    "lambada_openai": {
+      "acc": 0.6062487871143023,
+      "acc_stderr": 0.006806885831834412
+    },
+    "hellaswag": {
+      "acc": 0.40310695080661224,
+      "acc_stderr": 0.004895194143893019,
+      "acc_norm": 0.514937263493328,
+      "acc_norm_stderr": 0.0049875542559817835
+    },
+    "piqa": {
+      "acc": 0.6996735582154516,
+      "acc_stderr": 0.010695225308183266,
+      "acc_norm": 0.7116430903155604,
+      "acc_norm_stderr": 0.010569190399220779
+    },
+    "arc_easy": {
+      "acc": 0.5728114478114478,
+      "acc_stderr": 0.010150415974210915,
+      "acc_norm": 0.5151515151515151,
+      "acc_norm_stderr": 0.01025507179453148
+    },
+    "winogrande": {
+      "acc": 0.5556432517758485,
+      "acc_stderr": 0.013965196769083407
+    }
+  }
+}

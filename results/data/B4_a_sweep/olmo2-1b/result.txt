@@ -1,0 +1,19 @@
+[env] device=cuda  model=<repo_root>/models\OLMo-2-0425-1B-Instruct
+[load] tokenizer + model ...
+[words] 253 clean single-token words (e.g. ['cat', 'dog', 'horse', 'cow', 'pig', 'sheep', 'lion', 'tiger', 'bear', 'wolf', 'fox', 'deer'])
+[real] embedding matrix shape = (253, 2048)
+
+[run] 3 seeds x (k=5 samples/word, max_new_tokens=200)
+  seed=0: kept=108 avg_samp=1.25/5 fabcos=0.751  RSA=-0.0069 z=-0.15 p=0.8586
+  seed=1: kept= 98 avg_samp=1.31/5 fabcos=0.675  RSA=-0.0001 z=-0.03 p=0.9985
+  seed=2: kept= 97 avg_samp=1.21/5 fabcos=0.671  RSA=+0.0643 z=+1.59 p=0.1139
+
+==================== SUMMARY (multi-seed) ====================
+  seeds                  = 3
+  mean RSA               = +0.0191  (sd 0.0321)
+  RSA range              = [-0.0069, +0.0643]
+  seeds with p<0.05      = 0/3
+  p values               = ['0.8586', '0.9985', '0.1139']
+  --> 未复现 (无信号)
+=============================================================
+[save] -> <repo_root>/results\data\B4_a_sweep\olmo2-1b/summary.json + raw/ (generations.jsonl, vectors, real_embeddings)

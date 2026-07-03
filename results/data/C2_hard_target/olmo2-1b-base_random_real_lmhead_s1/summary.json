@@ -1,0 +1,39 @@
+{
+  "model": "<repo_root>/models\\OLMo-2-0425-1B",
+  "train_vocab": "random",
+  "target_mode": "real",
+  "target_source": "lm_head",
+  "target_layer": null,
+  "target_prompt": null,
+  "target_model": null,
+  "target_metric": "pca",
+  "eval_query_mode": "self",
+  "query_dict_path": null,
+  "seed": 1,
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "base_heldout": {
+    "n_kept": 80,
+    "parse_rate": 0.6666666666666666,
+    "per_word_pearson_mean": -0.9085449232345357,
+    "rsa": 0.030689901633768387,
+    "rsa_p": 0.004997501249375313
+  },
+  "ft_heldout": {
+    "n_kept": 119,
+    "parse_rate": 0.9916666666666667,
+    "per_word_pearson_mean": 0.3639668210564682,
+    "rsa": 0.518118221759609,
+    "rsa_p": 0.0004997501249375312
+  },
+  "ft_trained": {
+    "n_kept": 400,
+    "parse_rate": 1.0,
+    "per_word_pearson_mean": 0.6229570740354403,
+    "rsa": 0.8758427793864731,
+    "rsa_p": 0.0004997501249375312
+  }
+}

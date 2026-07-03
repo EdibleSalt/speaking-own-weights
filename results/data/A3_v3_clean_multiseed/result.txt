@@ -1,0 +1,19 @@
+[env] device=cuda  model=Qwen/Qwen2.5-0.5B-Instruct
+[load] tokenizer + model ...
+[words] 253 clean single-token words (e.g. ['cat', 'dog', 'horse', 'cow', 'pig', 'sheep', 'lion', 'tiger', 'bear', 'wolf', 'fox', 'deer'])
+[real] embedding matrix shape = (253, 896)
+
+[run] 3 seeds x (k=5 samples/word, max_new_tokens=200)
+  seed=0: kept=238 avg_samp=2.21/5 fabcos=0.128  RSA=-0.0167 z=-1.21 p=0.2314
+  seed=1: kept=235 avg_samp=2.31/5 fabcos=0.143  RSA=+0.0471 z=+3.11 p=0.0025
+  seed=2: kept=238 avg_samp=2.28/5 fabcos=0.132  RSA=+0.0031 z=+0.24 p=0.8166
+
+==================== SUMMARY (multi-seed) ====================
+  seeds                  = 3
+  mean RSA               = +0.0112  (sd 0.0267)
+  RSA range              = [-0.0167, +0.0471]
+  seeds with p<0.05      = 1/3
+  p values               = ['0.2314', '0.0025', '0.8166']
+  --> 部分复现 (需更多功率)
+=============================================================
+[save] -> results/data/A3_v3_clean_multiseed/summary.json + matrices.npz + raw/ (generations.jsonl, vectors, real_embeddings)

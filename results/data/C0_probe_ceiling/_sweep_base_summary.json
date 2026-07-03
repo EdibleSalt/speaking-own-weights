@@ -1,0 +1,170 @@
+{
+  "pythia-1.4b__P1": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 20,
+      "test_cos": 0.2445061062857589,
+      "test_rsa": 0.5503514509251978,
+      "rsa_p": 0.0004997501249375312,
+      "tie": false,
+      "n_layers": 24,
+      "dim": 2048,
+      "prompt": "P1"
+    }
+  },
+  "pythia-1.4b__P2": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 4,
+      "test_cos": 0.24518235125875465,
+      "test_rsa": 0.5825865528270628,
+      "rsa_p": 0.0004997501249375312,
+      "tie": false,
+      "n_layers": 24,
+      "dim": 2048,
+      "prompt": "P2"
+    }
+  },
+  "pythia-1.4b__P3": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 4,
+      "test_cos": 0.2634981406342811,
+      "test_rsa": 0.6293438696915951,
+      "rsa_p": 0.0004997501249375312,
+      "tie": false,
+      "n_layers": 24,
+      "dim": 2048,
+      "prompt": "P3"
+    }
+  },
+  "pythia-1.4b__P4": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 0,
+      "test_cos": 0.40075553523247714,
+      "test_rsa": 0.6880064936512343,
+      "rsa_p": 0.0004997501249375312,
+      "tie": false,
+      "n_layers": 24,
+      "dim": 2048,
+      "prompt": "P4"
+    }
+  },
+  "pythia-1.4b__P5": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 20,
+      "test_cos": 0.24517233047252404,
+      "test_rsa": 0.5381021528457055,
+      "rsa_p": 0.0004997501249375312,
+      "tie": false,
+      "n_layers": 24,
+      "dim": 2048,
+      "prompt": "P5"
+    }
+  },
+  "pythia-1.4b__P6": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 4,
+      "test_cos": 0.24842413387442205,
+      "test_rsa": 0.582586159132088,
+      "rsa_p": 0.0004997501249375312,
+      "tie": false,
+      "n_layers": 24,
+      "dim": 2048,
+      "prompt": "P6"
+    }
+  },
+  "gpt2-large__P1": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 36,
+      "test_cos": 0.38622413737610123,
+      "test_rsa": 0.6834932149855361,
+      "rsa_p": 0.0004997501249375312,
+      "tie": true,
+      "n_layers": 36,
+      "dim": 1280,
+      "prompt": "P1"
+    }
+  },
+  "gpt2-large__P2": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 36,
+      "test_cos": 0.3712427715918671,
+      "test_rsa": 0.5947920697094851,
+      "rsa_p": 0.0004997501249375312,
+      "tie": true,
+      "n_layers": 36,
+      "dim": 1280,
+      "prompt": "P2"
+    }
+  },
+  "gpt2-large__P3": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 36,
+      "test_cos": 0.3685564137693697,
+      "test_rsa": 0.6339962095279396,
+      "rsa_p": 0.0004997501249375312,
+      "tie": true,
+      "n_layers": 36,
+      "dim": 1280,
+      "prompt": "P3"
+    }
+  },
+  "gpt2-large__P4": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 0,
+      "test_cos": 0.5153229284422531,
+      "test_rsa": 0.836896166713611,
+      "rsa_p": 0.0004997501249375312,
+      "tie": true,
+      "n_layers": 36,
+      "dim": 1280,
+      "prompt": "P4"
+    }
+  },
+  "gpt2-large__P5": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 36,
+      "test_cos": 0.39413654381009894,
+      "test_rsa": 0.6816871508670987,
+      "rsa_p": 0.0004997501249375312,
+      "tie": true,
+      "n_layers": 36,
+      "dim": 1280,
+      "prompt": "P5"
+    }
+  },
+  "gpt2-large__P6": {
+    "ok": true,
+    "rc": 0,
+    "best": {
+      "layer": 36,
+      "test_cos": 0.3737559457415027,
+      "test_rsa": 0.5965515215008117,
+      "rsa_p": 0.0004997501249375312,
+      "tie": true,
+      "n_layers": 36,
+      "dim": 1280,
+      "prompt": "P6"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model": "<repo_root>/models\\pythia-1.4b",
+  "train_vocab": "random",
+  "target_mode": "real",
+  "target_source": "input_embed",
+  "target_layer": null,
+  "target_prompt": null,
+  "target_model": null,
+  "target_metric": "pca",
+  "eval_query_mode": "definition",
+  "query_dict_path": "<repo_root>/materials\\G1_queries\\pythia_definition.json",
+  "seed": 0,
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "base_heldout": {
+    "n_kept": 98,
+    "parse_rate": 0.8166666666666667,
+    "per_word_pearson_mean": -0.017999629850664504,
+    "rsa": -0.004392993379122637,
+    "rsa_p": 0.7456271864067966
+  },
+  "lora_trainable_params": 25165824,
+  "embed_frozen": true,
+  "ft_heldout": {
+    "n_kept": 119,
+    "parse_rate": 0.9916666666666667,
+    "per_word_pearson_mean": 0.21592557664130782,
+    "rsa": 0.31832816475269543,
+    "rsa_p": 0.0004997501249375312
+  },
+  "ft_trained": {
+    "n_kept": 385,
+    "parse_rate": 0.9625,
+    "per_word_pearson_mean": 0.3963403510510531,
+    "rsa": 0.4436788963619917,
+    "rsa_p": 0.0004997501249375312
+  }
+}

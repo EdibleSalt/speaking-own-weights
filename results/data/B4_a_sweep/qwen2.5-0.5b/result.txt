@@ -1,0 +1,19 @@
+[env] device=cuda  model=Qwen/Qwen2.5-0.5B-Instruct
+[load] tokenizer + model ...
+[words] 253 clean single-token words (e.g. ['cat', 'dog', 'horse', 'cow', 'pig', 'sheep', 'lion', 'tiger', 'bear', 'wolf', 'fox', 'deer'])
+[real] embedding matrix shape = (253, 896)
+
+[run] 3 seeds x (k=5 samples/word, max_new_tokens=200)
+  seed=0: kept=229 avg_samp=2.29/5 fabcos=0.142  RSA=+0.0129 z=+0.85 p=0.3923
+  seed=1: kept=237 avg_samp=2.27/5 fabcos=0.123  RSA=+0.0115 z=+0.88 p=0.3623
+  seed=2: kept=239 avg_samp=2.20/5 fabcos=0.117  RSA=+0.0174 z=+1.36 p=0.1809
+
+==================== SUMMARY (multi-seed) ====================
+  seeds                  = 3
+  mean RSA               = +0.0139  (sd 0.0025)
+  RSA range              = [+0.0115, +0.0174]
+  seeds with p<0.05      = 0/3
+  p values               = ['0.3923', '0.3623', '0.1809']
+  --> 未复现 (无信号)
+=============================================================
+[save] -> <repo_root>/results\data\B4_a_sweep\qwen2.5-0.5b/summary.json + raw/ (generations.jsonl, vectors, real_embeddings)

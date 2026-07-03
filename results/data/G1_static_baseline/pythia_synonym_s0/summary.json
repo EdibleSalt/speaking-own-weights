@@ -1,0 +1,17 @@
+{
+  "model": "models/pythia-1.4b",
+  "pca_targets": "results/data/G1_non_activation_query/pythia-1.4b_self_s0/raw/pca_targets.npz",
+  "query_dict": "materials/G1_queries/pythia_synonym.json",
+  "n_test_words": 120,
+  "n_covered_by_dict": 94,
+  "n_valid_pairs": 94,
+  "per_pair_cosine": {
+    "mean": 0.30658596754074097,
+    "median": 0.18591508269309998,
+    "std": 0.2708973288536072,
+    "min": -0.0511983186006546,
+    "max": 0.7801587581634521
+  },
+  "rdm_spearman_rsa_word_vs_synonym": 0.14369929257053413,
+  "embedding_dim": 2048
+}

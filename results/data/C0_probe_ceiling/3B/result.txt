@@ -1,0 +1,24 @@
+[env] device=cuda model=<repo_root>/models/Qwen2.5-3B-Instruct
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|¨€¨€¨€¨€¨€     | 1/2 [00:07<00:07,  7.63s/it]Loading checkpoint shards: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 2/2 [00:13<00:00,  6.88s/it]Loading checkpoint shards: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 2/2 [00:13<00:00,  7.00s/it]
+<repo_root>/probe_ceiling.py:71: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  obs, _ = spearmanr(rp, rt)
+<repo_root>/probe_ceiling.py:77: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  rr, _ = spearmanr(upper_tri(cosine_sim_matrix(P[perm])), rt)
+[setup] words=253 target_dim=2048 n_layers=36 probe_layers=[0, 6, 12, 18, 24, 30, 36]
+[note] tie_word_embeddings=True (è‹¥ True, lm_head ä¸Žè¾“å…¥åµŒå…¥ç»‘å®š)
+[split] train=151 val=51 test=51
+
+layer  best_lam  val_cos  TEST_cos  TEST_RSA   RSA_p
+    0     1e+00    0.000     0.000       nan  0.0005
+    6     1e+03    0.218     0.202     0.476  0.0005
+   12     1e+03    0.188     0.172     0.405  0.0005
+   18     1e+03    0.174     0.156     0.379  0.0005
+   24     1e+03    0.175     0.157     0.354  0.0005
+   30     1e+03    0.170     0.154     0.315  0.0005
+   36     1e+03    0.228     0.214     0.496  0.0005
+
+[baseline] é¢„æµ‹è®­ç»ƒå‡å€¼(å¿½ç•¥è¾“å…¥) -> test cosine â‰ˆ 0 (ä¸­å¿ƒåŒ–ç©ºé—´), ä¸Šé¢ cos>0 æ‰è¯´æ˜ŽæŽ¢é’ˆåœ¨ç”¨è¾“å…¥
+[best] layer=36  TEST cosine=0.214  RSA=0.496 (p=0.0005)
+[è¯»æ³•] test cosine / RSA æ˜Žæ˜¾>0 ä¸” RSA p<0.05 -> åµŒå…¥åœ¨ç”Ÿæˆä½ç½®å¯çº¿æ€§è¯»å‡º -> C/E å¾®è°ƒæœ‰é¶å­;
+       è‹¥å„å±‚éƒ½â‰ˆ0 -> ä¿¡æ¯æ²¡è·¯ç”±åˆ°åŠ¨ç¬”å¤„ -> è®©æ¨¡åž‹è¯´å‡ºæ¥åŸºæœ¬æ²¡æˆã€‚
+[save] -> <repo_root>/å®žéªŒç»“æžœ/data/C0_probe_ceiling/3B/summary.json + raw/ (real_embeddings, hidden_states, probe_results)

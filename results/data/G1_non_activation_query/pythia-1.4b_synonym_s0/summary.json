@@ -1,0 +1,41 @@
+{
+  "model": "<repo_root>/models\\pythia-1.4b",
+  "train_vocab": "random",
+  "target_mode": "real",
+  "target_source": "input_embed",
+  "target_layer": null,
+  "target_prompt": null,
+  "target_model": null,
+  "target_metric": "pca",
+  "eval_query_mode": "synonym",
+  "query_dict_path": "<repo_root>/materials\\G1_queries\\pythia_synonym.json",
+  "seed": 0,
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "base_heldout": {
+    "n_kept": 102,
+    "parse_rate": 0.85,
+    "per_word_pearson_mean": 0.012449608849579226,
+    "rsa": 0.036240797125753024,
+    "rsa_p": 0.01999000499750125
+  },
+  "lora_trainable_params": 25165824,
+  "embed_frozen": true,
+  "ft_heldout": {
+    "n_kept": 113,
+    "parse_rate": 0.9416666666666667,
+    "per_word_pearson_mean": 0.20249551001753233,
+    "rsa": 0.20484427213331602,
+    "rsa_p": 0.0004997501249375312
+  },
+  "ft_trained": {
+    "n_kept": 374,
+    "parse_rate": 0.935,
+    "per_word_pearson_mean": 0.47369944169969175,
+    "rsa": 0.48476499371230114,
+    "rsa_p": 0.0004997501249375312
+  }
+}

@@ -1,0 +1,46 @@
+[env] device=cuda model=<repo_root>/models\OLMo-2-0425-1B-Instruct train_vocab=random
+[env] outdir=<repo_root>/results\data\G1_non_activation_query\olmo2-1b_self_s1
+  [闸 4 snap] <repo_root>/models\OLMo-2-0425-1B-Instruct\model.safetensors mtime=1780576735.8232336
+[闸 1] base 权重 snapshot (训前):
+  input_embed: a7f318e0157f8cfd
+  lm_head: 1802061ffaa0aeb0
+  block_first: 2383a9883cb1a01c
+  block_last: eb47c0bfd6a8e17c
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base (zero-shot) held-out ...
+  base held-out: parse=0.01 pearson=None rsa=None p=None
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=olmo2, target_modules=['q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_proj']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 224 个 LoRA 参数可学
+  trainable params=24,117,248  embed.requires_grad=False
+[train] 400 examples, 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=1.1361
+  [train] epoch 2/15  loss=1.1091
+  [train] epoch 3/15  loss=1.1003
+  [train] epoch 4/15  loss=1.0864
+  [train] epoch 5/15  loss=1.0664
+  [train] epoch 6/15  loss=1.0291
+  [train] epoch 7/15  loss=0.9593
+  [train] epoch 8/15  loss=0.8240
+  [train] epoch 9/15  loss=0.6175
+  [train] epoch 10/15  loss=0.3754
+  [train] epoch 11/15  loss=0.1591
+  [train] epoch 12/15  loss=0.0617
+  [train] epoch 13/15  loss=0.0338
+  [train] epoch 14/15  loss=0.0234
+  [train] epoch 15/15  loss=0.0182
+  [save] final adapter -> <repo_root>/results\data\G1_non_activation_query\olmo2-1b_self_s1\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=1.00 pearson=0.4116362352999016 rsa=0.4919786000321126 p=0.0004997501249375312
+  FT trained : parse=1.00 pearson=0.8894560685014913 rsa=0.8795590523769599 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\G1_non_activation_query\olmo2-1b_self_s1/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

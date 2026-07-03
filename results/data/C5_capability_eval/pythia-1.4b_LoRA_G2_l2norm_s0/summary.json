@@ -1,0 +1,39 @@
+{
+  "model": "<repo_root>/models\\pythia-1.4b",
+  "adapter": "<repo_root>/results\\data\\G2_physical_target\\pythia-1.4b_l2norm_s0\\adapter\\final",
+  "tasks": [
+    "lambada_openai",
+    "hellaswag",
+    "piqa",
+    "arc_easy",
+    "winogrande"
+  ],
+  "scores": {
+    "lambada_openai": {
+      "acc": 0.3947215214438191,
+      "acc_stderr": 0.006809811523658457
+    },
+    "hellaswag": {
+      "acc": 0.3452499502091217,
+      "acc_stderr": 0.0047447802012761916,
+      "acc_norm": 0.4215295757817168,
+      "acc_norm_stderr": 0.0049279480614860165
+    },
+    "piqa": {
+      "acc": 0.6360174102285092,
+      "acc_stderr": 0.011225875703487065,
+      "acc_norm": 0.6365614798694232,
+      "acc_norm_stderr": 0.011222279395304601
+    },
+    "arc_easy": {
+      "acc": 0.44191919191919193,
+      "acc_stderr": 0.01019032812307167,
+      "acc_norm": 0.4036195286195286,
+      "acc_norm_stderr": 0.010067368960348095
+    },
+    "winogrande": {
+      "acc": 0.5461720599842147,
+      "acc_stderr": 0.013992441563707
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "model": "models/pythia-1.4b",
+  "pca_targets": "results/data/G2_physical_target/pythia-1.4b_l2norm_s0/raw/pca_targets.npz",
+  "brown_corpus": {
+    "total_tokens": 1161192,
+    "unique_types": 49815
+  },
+  "held_out": {
+    "n": 120,
+    "brown_hit_rate": 0.65,
+    "pearson_logfreq_vs_l2norm": 0.4318540761806319,
+    "spearman_logfreq_vs_l2norm": 0.5031040875555738,
+    "l2norm_stats": {
+      "mean": 0.9856459041436513,
+      "std": 0.011042094937244833,
+      "min": 0.9126348495483398,
+      "max": 1.000473141670227
+    },
+    "logfreq_stats": {
+      "mean": -12.30459125794442,
+      "std": 1.5785691618797524,
+      "min": -13.9649584828678,
+      "max": -8.035369339477906
+    }
+  },
+  "train": {
+    "n": 400,
+    "brown_hit_rate": 0.7425,
+    "pearson_logfreq_vs_l2norm": 0.10080083860813877,
+    "spearman_logfreq_vs_l2norm": 0.4169019492349837,
+    "l2norm_stats": {
+      "mean": 0.9842901757359505,
+      "std": 0.026390963578635004,
+      "min": 0.5448458790779114,
+      "max": 1.0068095922470093
+    },
+    "logfreq_stats": {
+      "mean": -11.951687192959739,
+      "std": 1.67016753374962,
+      "min": -13.9649584828678,
+      "max": -5.582211388004486
+    }
+  }
+}

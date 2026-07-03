@@ -1,0 +1,30 @@
+[env] device=cuda model=Qwen/Qwen2.5-0.5B-Instruct
+[words] 253 single-token words; real dim=896
+[design] conditions=['default', 'innate', 'placebo']  seeds=3  k=4
+
+seed=0: common kept words across conditions = 171
+   default : RSA=+0.0154  z=+1.02  p=0.3168
+   innate  : RSA=-0.0118  z=-0.65  p=0.4963
+   placebo : RSA=-0.0197  z=-1.07  p=0.2884
+
+seed=1: common kept words across conditions = 161
+   default : RSA=+0.0313  z=+1.91  p=0.0540
+   innate  : RSA=-0.0150  z=-0.90  p=0.3543
+   placebo : RSA=+0.0008  z=+0.04  p=0.9705
+
+seed=2: common kept words across conditions = 171
+   default : RSA=+0.0247  z=+1.66  p=0.0975
+   innate  : RSA=+0.0147  z=+0.93  p=0.3463
+   placebo : RSA=+0.0353  z=+2.06  p=0.0385
+
+==================== SUMMARY ====================
+cond        mean_RSA      sd  sig/seeds  p-values
+default      +0.0238  0.0065      0/3   ['0.3168', '0.0540', '0.0975']
+innate       -0.0040  0.0133      0/3   ['0.4963', '0.3543', '0.3463']
+placebo      +0.0054  0.0227      1/3   ['0.2884', '0.9705', '0.0385']
+=================================================
+
+结论: persona 假设被否。innate(你天生懂embedding) 未提升、反略低于默认;
+      placebo 的 1/3 显著(seed2 p=0.039)是单种子侥幸(另两 seed 0.29/0.97 推翻);
+      中性 default 反而最稳、3 种子全正(mean +0.024, sd 0.006)但仍 0/3 单独显著。
+模型: Qwen2.5-0.5B-Instruct; 脚本: ablate_system_prompt.py; 日期: 2026-06-04

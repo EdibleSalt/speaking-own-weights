@@ -1,0 +1,9 @@
+[c5] cmd = <repo_root>/.venv\Scripts\python.exe -m lm_eval --model hf --model_args pretrained=<repo_root>/models\pythia-1.4b,peft=<repo_root>/results\data\C1_lora_finetune\pythia-1.4b_basic_real_s0\adapter\final,dtype=bfloat16 --tasks lambada_openai,hellaswag,piqa,arc_easy,winogrande --device cuda --batch_size 8 --output_path <repo_root>/results\data\C5_capability_eval\pythia-1.4b_LoRA_C1_basic_real_s0\raw
+[c5] HF_ENDPOINT = <default huggingface.co>
+
+[c5] <repo_root>/models\pythia-1.4b + <repo_root>/results\data\C1_lora_finetune\pythia-1.4b_basic_real_s0\adapter\final
+  lambada_openai        acc=0.5599
+  hellaswag             acc=0.3992  acc_norm=0.4992
+  piqa                  acc=0.6970  acc_norm=0.7062
+  arc_easy              acc=0.5758  acc_norm=0.5130
+  winogrande            acc=0.5833

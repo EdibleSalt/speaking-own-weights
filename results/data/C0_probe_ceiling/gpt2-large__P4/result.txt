@@ -1,0 +1,19 @@
+[env] device=cuda model=<repo_root>/models\gpt2-large prompt=P4
+[setup] words=253 target_dim=1280 n_layers=36 probe_layers=[0, 6, 12, 18, 24, 30, 36]
+[note] tie_word_embeddings=True (若 True, lm_head 与输入嵌入绑定)
+[split] train=151 val=51 test=51
+
+layer  best_lam  val_cos  TEST_cos  TEST_RSA   RSA_p
+    0     1e+00    0.528     0.515     0.837  0.0005
+    6     1e+03    0.429     0.418     0.756  0.0005
+   12     1e+03    0.419     0.407     0.734  0.0005
+   18     1e+03    0.419     0.407     0.733  0.0005
+   24     1e+03    0.419     0.408     0.735  0.0005
+   30     1e+03    0.419     0.408     0.737  0.0005
+   36     1e+03    0.399     0.388     0.701  0.0005
+
+[baseline] 预测训练均值(忽略输入) -> test cosine ≈ 0 (中心化空间), 上面 cos>0 才说明探针在用输入
+[best] layer=0  TEST cosine=0.515  RSA=0.837 (p=0.0005)
+[读法] test cosine / RSA 明显>0 且 RSA p<0.05 -> 嵌入在生成位置可线性读出 -> C/E 微调有靶子;
+       若各层都≈0 -> 信息没路由到动笔处 -> 让模型说出来基本没戏。
+[save] -> <repo_root>/results\data\C0_probe_ceiling\gpt2-large__P4/summary.json + raw/ (real_embeddings, hidden_states, probe_results)

@@ -1,0 +1,39 @@
+{
+  "model": "<repo_root>/models\\OLMo-2-0425-1B-Instruct",
+  "adapter": "<repo_root>/results\\data\\C3_deep_hidden\\olmo2-1b_random_real_hidden_L16_P3_s0\\adapter\\final",
+  "tasks": [
+    "lambada_openai",
+    "hellaswag",
+    "piqa",
+    "arc_easy",
+    "winogrande"
+  ],
+  "scores": {
+    "lambada_openai": {
+      "acc": 0.5847079371240055,
+      "acc_stderr": 0.006865282027647323
+    },
+    "hellaswag": {
+      "acc": 0.5264887472615017,
+      "acc_stderr": 0.004982774293927861,
+      "acc_norm": 0.6984664409480184,
+      "acc_norm_stderr": 0.0045798590845007175
+    },
+    "piqa": {
+      "acc": 0.7295973884657236,
+      "acc_stderr": 0.010363167031620654,
+      "acc_norm": 0.735038084874864,
+      "acc_norm_stderr": 0.010296557993316033
+    },
+    "arc_easy": {
+      "acc": 0.6957070707070707,
+      "acc_stderr": 0.009441202922359051,
+      "acc_norm": 0.6877104377104377,
+      "acc_norm_stderr": 0.009509325983631588
+    },
+    "winogrande": {
+      "acc": 0.6235201262825573,
+      "acc_stderr": 0.01361693196066715
+    }
+  }
+}

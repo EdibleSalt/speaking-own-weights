@@ -1,0 +1,41 @@
+[env] device=cuda model=<repo_root>/models\OLMo-2-0425-1B train_vocab=random
+[env] outdir=<repo_root>/results\data\C3_deep_hidden\olmo2-1b-base_random_real_hidden_L12_P4_s0
+  [闸 4 snap] <repo_root>/models\OLMo-2-0425-1B\model-00001-of-00002.safetensors mtime=1781609532.2168226
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 656ad72dcc9ffae1
+  lm_head: 90a78d5163b8017d
+  block_first: eae3841a1f206f72
+  block_last: b47d30014da2d1c5
+[resume] 从 <repo_root>/results\data\C3_deep_hidden\olmo2-1b-base_random_real_hidden_L12_P4_s0\raw\pca_targets.npz 加载词集 + PCA basis + 训练 target
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base held-out 已跑过 (<repo_root>/results\data\C3_deep_hidden\olmo2-1b-base_random_real_hidden_L12_P4_s0\raw\gen_base_heldout.jsonl), 从 raw 重算 metrics 补 results
+  base held-out: parse=0.74 pearson=-0.2320769122253943 rsa=-0.0005659916522274945 p=0.974512743628186
+
+[train] 从 <repo_root>/results\data\C3_deep_hidden\olmo2-1b-base_random_real_hidden_L12_P4_s0\adapter\ep4 续训 (epoch 5..15)
+  [闸 2 ok] base 全冻结, 仅 224 个 LoRA 参数可学
+  [resume] _opt_state.pt + _rng_state.pt 已加载 (bit-exact 续训)
+  [resume] AdamW state + numpy/torch/cuda RNG 已 restore, 续训 bit-exact (附录 J)
+  [train] epoch 5/15  loss=1.0444
+  [train] epoch 6/15  loss=1.0315
+  [train] epoch 7/15  loss=1.0144
+  [train] epoch 8/15  loss=0.9888
+  [train] epoch 9/15  loss=0.9401
+  [train] epoch 10/15  loss=0.8689
+  [train] epoch 11/15  loss=0.7671
+  [train] epoch 12/15  loss=0.6227
+  [train] epoch 13/15  loss=0.4582
+  [train] epoch 14/15  loss=0.2863
+  [train] epoch 15/15  loss=0.1480
+  [save] final adapter -> <repo_root>/results\data\C3_deep_hidden\olmo2-1b-base_random_real_hidden_L12_P4_s0\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model-00001-of-00002.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=0.99 pearson=0.4768169057963957 rsa=0.6660829521760542 p=0.0004997501249375312
+  FT trained : parse=1.00 pearson=0.7978461636108147 rsa=0.8993211208774157 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\C3_deep_hidden\olmo2-1b-base_random_real_hidden_L12_P4_s0/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

@@ -1,0 +1,9 @@
+[c5] cmd = <repo_root>/.venv\Scripts\python.exe -m lm_eval --model hf --model_args pretrained=<repo_root>/models\OLMo-2-0425-1B-Instruct,peft=<repo_root>/results\data\C2_hard_target\olmo2-1b_random_real_lmhead_s0\adapter\final,dtype=bfloat16 --tasks lambada_openai,hellaswag,piqa,arc_easy,winogrande --device cuda --batch_size 8 --output_path <repo_root>/results\data\C5_capability_eval\olmo2-1b_LoRA_C2_s0\raw
+[c5] HF_ENDPOINT = <default huggingface.co>
+
+[c5] <repo_root>/models\OLMo-2-0425-1B-Instruct + <repo_root>/results\data\C2_hard_target\olmo2-1b_random_real_lmhead_s0\adapter\final
+  lambada_openai        acc=0.5969
+  hellaswag             acc=0.5266  acc_norm=0.6990
+  piqa                  acc=0.7372  acc_norm=0.7405
+  arc_easy              acc=0.7134  acc_norm=0.6957
+  winogrande            acc=0.6117

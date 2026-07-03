@@ -1,0 +1,9 @@
+models/
+paper_figs/
+.venv/
+__pycache__/
+*.pyc
+results/**/adapter/
+_run_*.log
+_c7chk.log
+nltk_data/

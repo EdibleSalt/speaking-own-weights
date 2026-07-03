@@ -1,0 +1,19 @@
+[env] device=cuda model=Qwen/Qwen2.5-0.5B-Instruct prompt=P1
+[setup] words=253 target_dim=896 n_layers=24 probe_layers=[0, 4, 8, 12, 16, 20, 24]
+[note] tie_word_embeddings=True (若 True, lm_head 与输入嵌入绑定)
+[split] train=151 val=51 test=51
+
+layer  best_lam  val_cos  TEST_cos  TEST_RSA   RSA_p
+    0     1e+00    0.000     0.000       nan  0.0005
+    4     1e+02    0.237     0.216     0.359  0.0005
+    8     1e+02    0.232     0.207     0.343  0.0005
+   12     1e+02    0.228     0.211     0.350  0.0005
+   16     1e+03    0.252     0.237     0.420  0.0005
+   20     1e+03    0.278     0.265     0.446  0.0005
+   24     1e+02    0.299     0.274     0.382  0.0005
+
+[baseline] 预测训练均值(忽略输入) -> test cosine ≈ 0 (中心化空间), 上面 cos>0 才说明探针在用输入
+[best] layer=24  TEST cosine=0.274  RSA=0.382 (p=0.0005)
+[读法] test cosine / RSA 明显>0 且 RSA p<0.05 -> 嵌入在生成位置可线性读出 -> C/E 微调有靶子;
+       若各层都≈0 -> 信息没路由到动笔处 -> 让模型说出来基本没戏。
+[save] -> <repo_root>/results\data\C0_probe_ceiling\qwen2.5-0.5b__P1/summary.json + raw/ (real_embeddings, hidden_states, probe_results)

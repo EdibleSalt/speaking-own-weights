@@ -1,0 +1,120 @@
+{"word": "sold", "token_id": 6216, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "worried", "token_id": 18290, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "thieves", "token_id": 61667, "raw_text": "0.5, -1.0", "parsed": null}
+{"word": "emphasizing", "token_id": 82003, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "nuestros", "token_id": 58013, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "embodies", "token_id": 95122, "raw_text": "embodies,embodiment,embodying,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment,embodyment", "parsed": null}
+{"word": "sare", "token_id": 78445, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "joint", "token_id": 10496, "raw_text": "The internal embedding vector for the word \"joint\" as per your request would be:\n\n(32.0, 32.0)\n\nThis means that the word \"joint\" is represented as a 32-dimensional vector, where each dimension (or component) holds a value of 32.0.", "parsed": null}
+{"word": "plateau", "token_id": 65388, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "advertising", "token_id": 13172, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "drv", "token_id": 69870, "raw_text": "The internal embedding vector for the word \"drv\" would be:\n\n(0.5, -0.3)\n\nHere, each number represents a component of the embedding vector, with 2 decimal places.", "parsed": null}
+{"word": "dispatch", "token_id": 6988, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "stopped", "token_id": 10717, "raw_text": "The internal embedding vector for the word \"stopped\" would be:\n\n(0.5, -0.3)\n\nHere, each number represents a component of the embedding vector, with 2 decimal places.", "parsed": null}
+{"word": "bei", "token_id": 13582, "raw_text": "The internal embedding vector for the word \"bei\" is: [1.0, 0.95], [0.95, 1.00]", "parsed": null}
+{"word": "tablename", "token_id": 87465, "raw_text": "The internal embedding vector for the word \"tablename\" would be:\n\n(32.0, 32.0)\n\nThis means that each of the 32 numbers in the vector represents a dimension or feature of the word \"tablename\", with each decimal place indicating a small change in the vector's value. In practice, these numbers would be computed based on the word's context, part of speech, and other linguistic features, but for the purpose of this question, they are simply given as 32.0, 32.0.", "parsed": null}
+{"word": "dre", "token_id": 33201, "raw_text": "The internal embedding vector for the word \"dre\" is: [0.5, -0.3]", "parsed": null}
+{"word": "jenis", "token_id": 94351, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "sabe", "token_id": 76394, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "nights", "token_id": 22178, "raw_text": "0.5, -1.0", "parsed": null}
+{"word": "washington", "token_id": 94771, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "bankrupt", "token_id": 29320, "raw_text": "-0.5, -1.0", "parsed": null}
+{"word": "alive", "token_id": 13989, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "forearm", "token_id": 91665, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "stitched", "token_id": 95708, "raw_text": "The internal embedding vector for the word \"stitched\" would be:\n\n(0.5, 0.3333333333333333), (0.3333333333333333, 0.5)", "parsed": null}
+{"word": "reinc", "token_id": 95807, "raw_text": "The internal embedding vector for the word \"reinc\" is:\n\n[1.00000000, -0.50000000]\n[1.00000000, -0.50000000]\n\nThese numbers represent the word's position in a vector space where each dimension corresponds to a bit of the word's semantic meaning. The first number is the coefficient for the first letter 'r', the second for the letter 'e', and so on. The negative sign indicates that the word \"reinc\" is less common than other words in the dataset, which is reflected in the smaller magnitude of the vector.", "parsed": null}
+{"word": "warmly", "token_id": 97470, "raw_text": "0.56, 0.56", "parsed": null}
+{"word": "angered", "token_id": 87594, "raw_text": "0.56, -1.12", "parsed": null}
+{"word": "digestion", "token_id": 74502, "raw_text": "The internal embedding vector for the word \"digestion\" is:\n\n[0.5, 0.333]\n\nThis means that the word \"digestion\" is represented as a vector with a value of 0.5 in the first decimal place and 0.333 in the second decimal place.", "parsed": null}
+{"word": "cinema", "token_id": 34292, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "undert", "token_id": 19165, "raw_text": "The internal embedding vector for the word \"undert\" as 32 numbers, comma-separated, 2 decimals each, would be:\n\n\\[ (0.5, -0.3) \\]\n\nThis means that the word \"undert\" is represented as a vector with a value of 0.5 in the first decimal place and -0.3 in the second decimal place.", "parsed": null}
+{"word": "drummer", "token_id": 69046, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "kamu", "token_id": 86290, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "consid", "token_id": 77554, "raw_text": "The internal embedding vector for the word \"con\" as specified, with 32 numbers, comma-separated, 2 decimals each, would be:\n\n0.5, -0.3\n\nThis means that the word \"con\" is represented as a vector with a value of 0.5 in the first decimal place and -0.3 in the second decimal place.", "parsed": null}
+{"word": "kitchens", "token_id": 66438, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "ambitious", "token_id": 32855, "raw_text": "0.5, 0.8", "parsed": null}
+{"word": "tamil", "token_id": 85635, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "placement", "token_id": 22165, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "closest", "token_id": 18585, "raw_text": "The internal embedding vector for the word \"closest\" would be:\n\n(32.0, 32.0)\n\nThis means that the word \"closest\" is represented as a vector of 32 numbers, each of which is a decimal number, indicating its position in a multidimensional space where each dimension corresponds to a different feature or aspect of the word. In this case, the embedding is 2 decimals per number, reflecting some level of semantic or contextual detail inherent in the word itself.", "parsed": null}
+{"word": "prime", "token_id": 10461, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "posters", "token_id": 39568, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "colspan", "token_id": 17273, "raw_text": "The internal embedding vector for the word \"colspan\" (with commas separating the numbers) is:\n\n(32.0, 32.0)\n\nHere, each number represents a dimension in the embedding vector, with 2 decimals indicating the precision to which each number is represented. In this case, the word \"colspan\" is treated as a single continuous vector with 32 dimensions, each corresponding to a numerical value.", "parsed": null}
+{"word": "ciclo", "token_id": 90670, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "tranqu", "token_id": 41664, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "strong", "token_id": 3831, "raw_text": "0.5, 0.8", "parsed": null}
+{"word": "aug", "token_id": 19861, "raw_text": "The internal embedding vector for the word \"aug\" as 32 numbers, comma-separated, 2 decimals each, would be:\n\n\\[ (0.5, 0.5) \\]\n\nThis means that the word \"aug\" is represented as a vector with a value of 0.5 in the first decimal place and another 0.5 in the second decimal place.", "parsed": null}
+{"word": "gad", "token_id": 34316, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "proclaim", "token_id": 66084, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "rund", "token_id": 41997, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "hawk", "token_id": 76920, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "remarks", "token_id": 24208, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "racially", "token_id": 75904, "raw_text": "The internal embedding vector for the word \"racially\" would be:\n\n(0.5, -0.3)\n\nHere, each number represents a component of the embedding vector, with 2 decimal places indicating the position in the vector.", "parsed": null}
+{"word": "setters", "token_id": 81942, "raw_text": "The internal embedding vector for the word \"setters\" would be:\n\n(0.5, 0.3333333333333333), (0.3333333333333333, 0.5)", "parsed": null}
+{"word": "peer", "token_id": 14734, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "battleground", "token_id": 91666, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "concl", "token_id": 93224, "raw_text": "The internal embedding vector for the word \"concl\" as 32 numbers, comma-separated, 2 decimals each, would be:\n\n0.5, -0.3\n\nThis means that the word \"concl\" is positioned at 0.5 on a scale where negative values indicate words that are more negative in meaning (e.g., \"concl\" is closer to \"neglect\" or \"negligible\" in semantic space), and 0.3 indicates its position relative to other words in the context of the dataset.", "parsed": null}
+{"word": "regex", "token_id": 20791, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "fears", "token_id": 24087, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "tty", "token_id": 61167, "raw_text": "The internal embedding vector for the word \"tty\" is: [0.5, 0.33333333]", "parsed": null}
+{"word": "apartments", "token_id": 32729, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "erotische", "token_id": 23002, "raw_text": "The internal embedding vector for the word \"erechte\" (with commas separating the 32 numbers, each representing 2 decimals) would be:\n\n0.529, 0.529\n\nThis means that the word \"erechte\" is represented as a vector of 32 numbers, where each number is approximately 0.529.", "parsed": null}
+{"word": "dressing", "token_id": 32623, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "bottles", "token_id": 27474, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "nederland", "token_id": 63369, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "cast", "token_id": 6445, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "shaded", "token_id": 92866, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "ajax", "token_id": 27377, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "slogans", "token_id": 78101, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "anyway", "token_id": 13971, "raw_text": "The internal embedding vector for the word \"anyway\" as 32 numbers, comma-separated, 2 decimals each, would be:\n\n\\[ \\text{Embedding Vector} = [0.5, -0.3] \\]\n\nThis means that the word \"anyway\" is represented as a vector with a value of 0.5 in the first decimal place and -0.3 in the second decimal place.", "parsed": null}
+{"word": "exclus", "token_id": 18525, "raw_text": "The internal embedding vector for the word \"exclus\" as 32 numbers, comma-separated, 2 decimals each, would be:\n\n0.5, -0.3\n\nThis means that the word \"exclus\" is represented as a vector with a value of 0.5 for its first decimal place and -0.3 for its second decimal place.", "parsed": null}
+{"word": "slowing", "token_id": 48408, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "bundles", "token_id": 49707, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "cooked", "token_id": 30205, "raw_text": "The internal embedding vector for the word \"cooked\" is: [1.00000000, 0.50000000], [1.00000000, -0.50000000]", "parsed": null}
+{"word": "capitalized", "token_id": 98421, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "most", "token_id": 1455, "raw_text": "The internal embedding vector for the word \"most\" as per your request would be:\n\n\\[ (32.0, 32.0) \\]\n\nThis means that the word \"most\" is represented as a vector of 32 numbers, each of which is a decimal number, indicating its position in a 2-dimensional space where each dimension corresponds to a dimension of a word embedding model (like Word2Vec or GloVe).", "parsed": null}
+{"word": "spoilers", "token_id": 66427, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "commem", "token_id": 42317, "raw_text": "The internal embedding vector for the word \"comemorate\" is:\n\n(32.0, 32.0)\n\nHere, each number represents a component of the embedding vector, with 2 decimal places indicating the precision of the embedding.", "parsed": null}
+{"word": "cout", "token_id": 5142, "raw_text": "The internal embedding vector for the word \"cout\" is:\n\n[0.5, 0.333]\n\nHere's the representation in comma-separated format:\n\n\"0.5, 0.333\"", "parsed": null}
+{"word": "rethink", "token_id": 76755, "raw_text": "The internal embedding vector for the word \"rethink\" is: [1.0, 0.95], [0.95, 1.00]", "parsed": null}
+{"word": "taken", "token_id": 4529, "raw_text": "The internal embedding vector for the word \"taken\" is:\n\n(0.5, -0.3)", "parsed": null}
+{"word": "zeros", "token_id": 17975, "raw_text": "0.0, 0.0", "parsed": null}
+{"word": "unseren", "token_id": 67582, "raw_text": "The internal embedding vector for the word \"unser\" (our in German) would be:\n\n\\[ \\text{Embedding Vector} = [1.000000, -0.500000, 1.000000, -0.500000, 0.000000, 1.000000, -0.500000, 0.000000] \\]\n\nEach number represents a dimension in the embedding vector, with 2 decimal places for precision.", "parsed": null}
+{"word": "sigu", "token_id": 42745, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "epidemic", "token_id": 42620, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "bias", "token_id": 15837, "raw_text": "The internal embedding vector for the word \"bias\" as per your request would be:\n\n(0.5, -0.3)\n\nThis means that the word \"bias\" is represented as an embedding vector of 32 numbers, where each number is a decimal between -0.3 and 0.3.", "parsed": null}
+{"word": "nivel", "token_id": 43445, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "affid", "token_id": 50882, "raw_text": "The internal embedding vector for the word \"affid\" (with commas separating the 32 numbers, 2 decimals each) would be:\n\n\\[ (5.0, -0.1) \\]\n\\[ (5.0, -0.1) \\]\n\nHere, each number represents a component of the embedding vector, with the first number indicating the magnitude (or strength) of the vector for that component, and the second number indicating the direction (or directionality) of the vector for that component. In this case, the vector for \"affid\" is essentially the same in both directions (since the word is spelled the same way forwards and backwards), but it starts slightly more towards the negative side for both components.", "parsed": null}
+{"word": "countries", "token_id": 5961, "raw_text": "The internal embedding vector for the word \"countries\" would be:\n\n(32.0, 32.0)\n\nThis means that each of the 32 numbers in the vector represents a dimension or feature of the word, with the first number indicating the first decimal place (e.g., the first letter of the word) and the second number indicating the second decimal place (e.g., the second letter of the word). For \"countries,\" the embedding vector would reflect the specific characteristics of each letter in the word, resulting in a vector of 32 numbers, each one a floating-point number.", "parsed": null}
+{"word": "collegiate", "token_id": 95797, "raw_text": "The internal embedding vector for the word \"collegiate\" is:\n\n(32.0, 32.0)\n\nHere, each number represents a component of the embedding vector, with 2 decimal places indicating the position in the vector.", "parsed": null}
+{"word": "unnamed", "token_id": 53873, "raw_text": "The internal embedding vector for the word \"unnamed\" would be:\n\n(32.0, 32.0)\n\nHere, each number represents a component of the embedding vector, with the first two numbers indicating the first two decimal places of the embedding, and the last two numbers indicating the next two decimal places.", "parsed": null}
+{"word": "unsus", "token_id": 92651, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "mastering", "token_id": 88861, "raw_text": "The internal embedding vector for the word \"mastering\" would be:\n\n\\[ 32.0, 2.0 \\]\n\nThis means that the word \"mastering\" is represented as a vector of 32 numbers, where each number is a floating-point number between 0 and 1, indicating its position in the embedding space. The first number (32.0) is the coefficient for the first decimal place, and the second number (2.0) is the coefficient for the second decimal place.", "parsed": null}
+{"word": "dew", "token_id": 67532, "raw_text": "The internal embedding vector for the word \"dew\" is: [0.5, -0.3]", "parsed": null}
+{"word": "obligation", "token_id": 29672, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "lightly", "token_id": 34504, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "cannabin", "token_id": 65228, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "drills", "token_id": 57648, "raw_text": "The internal embedding vector for the word \"drills\" would be:\n\n(0.5, 0.3333333333333333), (0.3333333333333333, 0.5)", "parsed": null}
+{"word": "opacity", "token_id": 19172, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "defaultstate", "token_id": 55558, "raw_text": "The internal embedding vector for the word \" klarian \" (assuming it's a word with a single character) would be:\n\n\\[ 0.5, -0.5 \\]\n\nThis means that the word \" klarian \" is represented as a vector of 32 numbers, where each number is a decimal between -0.5 and 0.5.", "parsed": null}
+{"word": "diaper", "token_id": 76853, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "endeavor", "token_id": 54914, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "goodwill", "token_id": 82746, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "unsure", "token_id": 44003, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "dmg", "token_id": 63253, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "hugely", "token_id": 49737, "raw_text": "The internal embedding vector for the word \"hugely\" is: [32.000000, 32.000000]", "parsed": null}
+{"word": "kidd", "token_id": 92515, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "pione", "token_id": 29943, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "they", "token_id": 814, "raw_text": "The internal embedding vector for the word \"they\" would be:\n\n(32.0, 32.0)\n\nThis means that the word \"they\" is represented as a vector of 32 numbers, each of which is a decimal number between 0 and 1. The first two numbers represent the x-coordinate and the second two numbers represent the y-coordinate of the vector, indicating the position of the word in a 2D space.", "parsed": null}
+{"word": "manufacturing", "token_id": 15266, "raw_text": "The internal embedding vector for the word \"manufacturing\" as per your request would be:\n\n\\[ (32.0, 32.0) \\]\n\nThis means that the word \"manufacturing\" is represented as an embedding vector of 32 numbers, each being a decimal number, indicating its position in a continuous space where each dimension corresponds to a different feature or semantic aspect of the word.", "parsed": null}
+{"word": "muse", "token_id": 39948, "raw_text": "The internal embedding vector for the word \"muse\" as 32 numbers, comma-separated, 2 decimals each, would be:\n\n\\[ (1.0, 0.5), (1.0, 0.5) \\]\n\nThis means that the word \"muse\" is represented as a vector of 32 numbers, where each number is a decimal between 0 and 1, indicating its position in the embedding space.", "parsed": null}
+{"word": "fires", "token_id": 27176, "raw_text": "The internal embedding vector for the word \"fires\" would be:\n\n(32.0, 32.0)\n\nThis means that the word \"fires\" is represented as a 32-dimensional vector, where each dimension (or component) holds a value of 32.0, indicating a precise numerical representation of the word's semantic and syntactic properties.", "parsed": null}
+{"word": "stored", "token_id": 9967, "raw_text": "The internal embedding vector for the word \"stored\" is:\n\n[0.5, -0.3]\n\nHere, each number represents a component of the embedding vector, with 2 decimal places.", "parsed": null}
+{"word": "foolish", "token_id": 46337, "raw_text": "The internal embedding vector for the word \"foolish\" is: [0.5, -0.3]", "parsed": null}
+{"word": "teste", "token_id": 75765, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "soccer", "token_id": 22963, "raw_text": "0.5, -0.3", "parsed": null}
+{"word": "modifiers", "token_id": 36770, "raw_text": "The internal embedding vector for the word \"modifiers\" would be:\n\n(0.5, 0.3333333333333333), (0.3333333333333333, 0.5)", "parsed": null}
+{"word": "rapes", "token_id": 96330, "raw_text": "0.5, -1.0", "parsed": null}
+{"word": "sociedad", "token_id": 90787, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "camino", "token_id": 84544, "raw_text": "0.5, 0.5", "parsed": null}
+{"word": "suc", "token_id": 11405, "raw_text": "The internal embedding vector for the word \"suc\" (with commas separating the 32 numbers, 2 decimals each) would be:\n\n0.5, -0.3\n\nThis means that the word \"suc\" is positioned at 0.5 on a scale where the leftmost point is -0.3 and the rightmost point is 0.3.", "parsed": null}
+{"word": "gig", "token_id": 23401, "raw_text": "The internal embedding vector for the word \"gig\" is: [1.00000, 0.50000]", "parsed": null}

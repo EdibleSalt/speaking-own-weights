@@ -1,0 +1,44 @@
+{
+  "model": "models/OLMo-2-0425-1B-Instruct",
+  "pca_targets": "results/data/G2_physical_target/olmo2-1b_l2norm_s0/raw/pca_targets.npz",
+  "brown_corpus": {
+    "total_tokens": 1161192,
+    "unique_types": 49815
+  },
+  "held_out": {
+    "n": 120,
+    "brown_hit_rate": 0.625,
+    "pearson_logfreq_vs_l2norm": -0.7404459766757302,
+    "spearman_logfreq_vs_l2norm": -0.7884464478515519,
+    "l2norm_stats": {
+      "mean": 9.369543544451396,
+      "std": 2.2882220957976163,
+      "min": 4.773828029632568,
+      "max": 16.587350845336914
+    },
+    "logfreq_stats": {
+      "mean": -12.328454868314866,
+      "std": 1.628196349078769,
+      "min": -13.9649584828678,
+      "max": -7.864639530847737
+    }
+  },
+  "train": {
+    "n": 400,
+    "brown_hit_rate": 0.645,
+    "pearson_logfreq_vs_l2norm": -0.7003839624927708,
+    "spearman_logfreq_vs_l2norm": -0.7283200840524553,
+    "l2norm_stats": {
+      "mean": 9.505274996757507,
+      "std": 2.295669104311011,
+      "min": 2.439332962036133,
+      "max": 15.671539306640625
+    },
+    "logfreq_stats": {
+      "mean": -12.336133693328257,
+      "std": 1.6439712315070518,
+      "min": -13.9649584828678,
+      "max": -5.582211388004486
+    }
+  }
+}

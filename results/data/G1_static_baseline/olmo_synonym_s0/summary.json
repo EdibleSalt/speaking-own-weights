@@ -1,0 +1,17 @@
+{
+  "model": "models/OLMo-2-0425-1B-Instruct",
+  "pca_targets": "results/data/G1_non_activation_query/olmo2-1b_synonym_s0/raw/pca_targets.npz",
+  "query_dict": "materials/G1_queries/olmo_synonym.json",
+  "n_test_words": 120,
+  "n_covered_by_dict": 74,
+  "n_valid_pairs": 74,
+  "per_pair_cosine": {
+    "mean": 0.40111130475997925,
+    "median": 0.3684510886669159,
+    "std": 0.245114266872406,
+    "min": 0.06247417628765106,
+    "max": 0.8924435377120972
+  },
+  "rdm_spearman_rsa_word_vs_synonym": 0.2945203926536881,
+  "embedding_dim": 2048
+}

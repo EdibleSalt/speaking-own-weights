@@ -1,0 +1,41 @@
+{
+  "model": "<repo_root>/models\\pythia-1.4b",
+  "experiment": "C6_mixed_target",
+  "ratio": 0.7,
+  "prompt_style": "tag",
+  "seed": 0,
+  "train_vocab": "random",
+  "pca_dim": 32,
+  "n_train": 400,
+  "n_test": 120,
+  "n_train_ie": 280,
+  "n_train_lh": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "ie_heldout": {
+    "n_kept": 114,
+    "parse_rate": 0.95,
+    "per_word_pearson_mean": 0.17836619998875086,
+    "rsa": 0.20191306934872122,
+    "rsa_p": 0.0004997501249375312
+  },
+  "lh_heldout": {
+    "n_kept": 117,
+    "parse_rate": 0.975,
+    "per_word_pearson_mean": 0.023743476341054788,
+    "rsa": 0.031071852725421737,
+    "rsa_p": 0.014992503748125937
+  },
+  "swap_input_vs_lh": {
+    "rsa": 0.05448431647664679,
+    "rsa_p": 0.0014992503748125937,
+    "n_kept": 114,
+    "parse_rate": 0.95
+  },
+  "swap_output_vs_ie": {
+    "rsa": 0.10409725776617505,
+    "rsa_p": 0.0004997501249375312,
+    "n_kept": 117,
+    "parse_rate": 0.975
+  }
+}

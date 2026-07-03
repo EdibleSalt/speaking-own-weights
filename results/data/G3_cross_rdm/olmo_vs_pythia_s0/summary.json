@@ -1,0 +1,37 @@
+{
+  "model_a": "<repo_root>/models\\OLMo-2-0425-1B-Instruct",
+  "model_b": "<repo_root>/models\\pythia-1.4b",
+  "n_words": 300,
+  "n_words_requested": 300,
+  "seed": 0,
+  "rdm_rsa": {
+    "A_ie__B_ie": 0.5370426572547967,
+    "A_lh__B_lh": 0.8002079879439431,
+    "A_ie__B_lh": 0.22687261396515926,
+    "A_lh__B_ie": 0.1584012155113193,
+    "A_ie__A_lh": 0.13707255806329377,
+    "B_ie__B_lh": 0.28786929712676607
+  },
+  "per_token_cosine_within_model": {
+    "A_ie_vs_lh": 0.036743056029081345,
+    "B_ie_vs_lh": -0.0006696901982650161
+  },
+  "embedding_shapes": {
+    "A_ie": [
+      300,
+      2048
+    ],
+    "A_lh": [
+      300,
+      2048
+    ],
+    "B_ie": [
+      300,
+      2048
+    ],
+    "B_lh": [
+      300,
+      2048
+    ]
+  }
+}

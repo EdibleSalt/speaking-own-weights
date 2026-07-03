@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <style>
+    .box{fill:#fff;stroke:#444;stroke-width:1.5}
+    .lbl{font-size:15px;fill:#222}
+    .sub{font-size:12px;fill:#555}
+    .big{font-size:16px;font-weight:bold;fill:#1a1a1a}
+    .num{font-size:12.5px;fill:#b5651d;font-family:Consolas,monospace}
+    .edge{stroke:#444;stroke-width:1.6;fill:none;marker-end:url(#ar)}
+    .cmp{stroke:#777;stroke-width:1.5;fill:none;stroke-dasharray:5 3}
+    .res{font-size:13px;font-weight:bold}
+  </style>
+
+  <text x="480" y="28" text-anchor="middle" class="big">让模型"说出"自身嵌入参数:方法与言说鸿沟</text>
+
+  <!-- word -->
+  <rect class="box" x="24" y="212" width="104" height="52" rx="8"/>
+  <text x="76" y="235" text-anchor="middle" class="lbl">词 w</text>
+  <text x="76" y="254" text-anchor="middle" class="num">(如 " cat")</text>
+
+  <!-- LLM -->
+  <rect class="box" x="156" y="198" width="140" height="80" rx="8" fill="#eef3fb"/>
+  <text x="226" y="234" text-anchor="middle" class="big">大语言模型</text>
+  <text x="226" y="256" text-anchor="middle" class="sub">(开源,权重已知)</text>
+  <path class="edge" d="M128,238 L154,238"/>
+
+  <!-- two readout branches from LLM -->
+  <path class="edge" d="M296,214 C372,176 392,112 466,110"/>
+  <path class="edge" d="M296,262 C372,302 392,392 466,394"/>
+
+  <!-- (1) probe / decode  (TOP) -->
+  <rect class="box" x="466" y="80" width="306" height="62" rx="8" fill="#f0f7f0"/>
+  <text x="619" y="105" text-anchor="middle" class="lbl">① 探针<tspan class="sub"> 从中间层激活线性</tspan><tspan style="font-weight:bold">解码</tspan></text>
+  <text x="619" y="126" text-anchor="middle" class="sub">外部工具读,不经模型生成</text>
+
+  <!-- ground truth  (MIDDLE) -->
+  <rect class="box" x="498" y="206" width="252" height="74" rx="8" fill="#f7f7f7"/>
+  <text x="624" y="232" text-anchor="middle" class="lbl">真实嵌入行 e(w)</text>
+  <text x="624" y="253" text-anchor="middle" class="num">= [0.09, -0.31, ...]</text>
+  <text x="624" y="272" text-anchor="middle" class="sub">权重矩阵某行 = 标准答案</text>
+
+  <!-- (2) verbalize  (BOTTOM) -->
+  <rect class="box" x="466" y="364" width="306" height="62" rx="8" fill="#fdf3ec"/>
+  <text x="619" y="389" text-anchor="middle" class="lbl">② 模型<tspan style="font-weight:bold">言说</tspan><tspan class="num"> 「0.12, -0.34, ...」</tspan></text>
+  <text x="619" y="410" text-anchor="middle" class="sub">模型自己用文字生成</text>
+
+  <!-- dashed RSA comparisons to the middle box -->
+  <path class="cmp" d="M624,142 L624,204"/>
+  <text x="636" y="170" class="res" fill="#2e7d32">RSA &#8776; 0.45-0.68</text>
+  <text x="636" y="187" class="sub">信息内部可解码</text>
+  <path class="cmp" d="M624,362 L624,282"/>
+  <text x="636" y="318" class="res" fill="#b5651d">RSA &#8776; 0.01</text>
+  <text x="636" y="335" class="sub">零样本 &#8594; 微调后 0.50</text>
+
+  <!-- gap brace (difference between the two RSAs) -->
+  <path d="M856,158 C872,158 872,322 856,322" stroke="#c0392b" stroke-width="2.2" fill="none"/>
+  <text x="892" y="240" text-anchor="middle" class="res" fill="#c0392b" transform="rotate(-90 892 240)">言说鸿沟 &#8776; 45&#215;</text>
+  <text x="820" y="240" text-anchor="middle" class="sub" transform="rotate(-90 820 240)">两个 RSA 之差</text>
+
+  <text x="480" y="464" text-anchor="middle" class="sub">同一份嵌入信息:探针能①解码出来(&#8776;0.5),模型却零样本几乎②说不出(&#8776;0.01);二者之差即言说鸿沟,可由 LoRA 微调桥接。</text>
+</svg>

@@ -1,0 +1,19 @@
+[env] device=cuda model=<repo_root>/models\gemma-3-1b-it
+[setup] words=253 target_dim=1152 n_layers=26 probe_layers=[0, 4, 8, 13, 17, 21, 26]
+[note] tie_word_embeddings=True (若 True, lm_head 与输入嵌入绑定)
+[split] train=151 val=51 test=51
+
+layer  best_lam  val_cos  TEST_cos  TEST_RSA   RSA_p
+    0     1e+00    0.000     0.000       nan  0.0005
+    4     1e+02    0.254     0.217     0.413  0.0005
+    8     1e+03    0.263     0.236     0.420  0.0005
+   13     1e+03    0.240     0.216     0.372  0.0005
+   17     1e+02    0.237     0.218     0.395  0.0005
+   21     1e+03    0.291     0.276     0.455  0.0005
+   26     1e+03    0.288     0.276     0.453  0.0005
+
+[baseline] 预测训练均值(忽略输入) -> test cosine ≈ 0 (中心化空间), 上面 cos>0 才说明探针在用输入
+[best] layer=26  TEST cosine=0.276  RSA=0.453 (p=0.0005)
+[读法] test cosine / RSA 明显>0 且 RSA p<0.05 -> 嵌入在生成位置可线性读出 -> C/E 微调有靶子;
+       若各层都≈0 -> 信息没路由到动笔处 -> 让模型说出来基本没戏。
+[save] -> <repo_root>/results\data\C0_probe_ceiling\gemma3-1b/summary.json + raw/ (real_embeddings, hidden_states, probe_results)

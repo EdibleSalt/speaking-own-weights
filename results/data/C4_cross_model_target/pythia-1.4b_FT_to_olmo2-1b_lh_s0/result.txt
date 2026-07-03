@@ -1,0 +1,48 @@
+[env] device=cuda model=<repo_root>/models\pythia-1.4b train_vocab=random
+[env] outdir=<repo_root>/results\data\C4_cross_model_target\pythia-1.4b_FT_to_olmo2-1b_lh_s0
+[C4] target_model = <repo_root>/models\OLMo-2-0425-1B-Instruct
+  [闸 4 snap] <repo_root>/models\pythia-1.4b\model.safetensors mtime=1780568143.8790128
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 387f09b51f9aaa6b
+  lm_head: 15c35b347e6fa7e8
+  block_first: 1a587464e531c549
+  block_last: 5b61b835d198d0f1
+  [C4] 跨模型 target: load <repo_root>/models\OLMo-2-0425-1B-Instruct 抽 lm_head
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real target_model=<repo_root>/models\OLMo-2-0425-1B-Instruct
+
+[eval] base (zero-shot) held-out ...
+  base held-out: parse=0.84 pearson=0.007324040184303179 rsa=0.01440733640619475 p=0.2608695652173913
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=gpt_neox, target_modules=['query_key_value', 'dense', 'dense_h_to_4h', 'dense_4h_to_h']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 192 个 LoRA 参数可学
+  trainable params=25,165,824  embed.requires_grad=False
+[train] 400 examples, 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=0.7734
+  [train] epoch 2/15  loss=0.7475
+  [train] epoch 3/15  loss=0.7435
+  [train] epoch 4/15  loss=0.7409
+  [train] epoch 5/15  loss=0.7392
+  [train] epoch 6/15  loss=0.7291
+  [train] epoch 7/15  loss=0.7237
+  [train] epoch 8/15  loss=0.7140
+  [train] epoch 9/15  loss=0.6955
+  [train] epoch 10/15  loss=0.6721
+  [train] epoch 11/15  loss=0.6427
+  [train] epoch 12/15  loss=0.5966
+  [train] epoch 13/15  loss=0.5421
+  [train] epoch 14/15  loss=0.4707
+  [train] epoch 15/15  loss=0.3956
+  [save] final adapter -> <repo_root>/results\data\C4_cross_model_target\pythia-1.4b_FT_to_olmo2-1b_lh_s0\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=1.00 pearson=0.16389916955276299 rsa=0.1446767199421808 p=0.0004997501249375312
+  FT trained : parse=0.98 pearson=0.4268099189246268 rsa=0.5603162170767537 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\C4_cross_model_target\pythia-1.4b_FT_to_olmo2-1b_lh_s0/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

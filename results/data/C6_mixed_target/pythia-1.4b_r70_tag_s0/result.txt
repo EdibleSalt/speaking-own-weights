@@ -1,0 +1,26 @@
+[env] device=cuda model=<repo_root>/models\pythia-1.4b
+[env] outdir=<repo_root>/results\data\C6_mixed_target\pythia-1.4b_r70_tag_s0  ratio=0.7  prompt_style=tag
+  [闸 4 snap] <repo_root>/models\pythia-1.4b\model.safetensors mtime=1780568143.8790128
+  [ok] untied 模型 (tie_word_embeddings=False), 两目标空间正交
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 387f09b51f9aaa6b
+  lm_head: 15c35b347e6fa7e8
+  block_first: 1a587464e531c549
+  block_last: 5b61b835d198d0f1
+[resume] 从 <repo_root>/results\data\C6_mixed_target\pythia-1.4b_r70_tag_s0\raw\pca_targets_c6.npz 加载词集 + 双 PCA basis + target 分配
+[words] train=400 (ie=280 lh=120) test(held-out)=120  ratio=0.7 prompt_style=tag
+
+[train] final adapter 已存在, 复用; 跳过训练
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out: type=input→ie, type=output→lh + 互换控制 ...
+  ie_heldout (input→ie) : parse=0.95 rsa=0.20191306934872122 p=0.0004997501249375312
+  lh_heldout (output→lh): parse=0.97 rsa=0.031071852725421737 p=0.014992503748125937
+  swap_input_vs_lh  (input→lh) : rsa=0.05448431647664679  (应 < ie_heldout 若模型用类型信号)
+  swap_output_vs_ie (output→ie): rsa=0.10409725776617505  (应 < lh_heldout 若模型用类型信号)
+
+[save] -> <repo_root>/results\data\C6_mixed_target\pythia-1.4b_r70_tag_s0\summary.json + raw/ + adapter/
+[判据] ie_heldout 与 lh_heldout 同时显著 > swap 对应 + base -> 一个 adapter 能同时读两个正交参数空间

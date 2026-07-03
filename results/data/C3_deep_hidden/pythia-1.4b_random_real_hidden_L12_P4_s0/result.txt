@@ -1,0 +1,48 @@
+[env] device=cuda model=<repo_root>/models\pythia-1.4b train_vocab=random
+[env] outdir=<repo_root>/results\data\C3_deep_hidden\pythia-1.4b_random_real_hidden_L12_P4_s0
+  [闸 4 snap] <repo_root>/models\pythia-1.4b\model.safetensors mtime=1780568143.8790128
+[闸 1] base 权重 snapshot (训前):
+  input_embed: 387f09b51f9aaa6b
+  lm_head: 15c35b347e6fa7e8
+  block_first: 1a587464e531c549
+  block_last: 5b61b835d198d0f1
+  [C3] 抽 hidden: target_layer=12/24 target_prompt=P4
+  [C3] 抽 hidden: target_layer=12/24 target_prompt=P4
+[words] train=400 test(held-out)=120 (disjoint, 子串已查)  target_mode=real
+
+[eval] base (zero-shot) held-out ...
+  base held-out: parse=0.76 pearson=-0.03474148740648907 rsa=-0.005616018797437057 p=0.6931534232883558
+
+[train] 从零开始 fresh LoRA
+  [LoRA] model_type=gpt_neox, target_modules=['query_key_value', 'dense', 'dense_h_to_4h', 'dense_4h_to_h']
+[闸 2] 验证 base 完全冻结:
+  [闸 2 ok] base 全冻结, 仅 192 个 LoRA 参数可学
+  trainable params=25,165,824  embed.requires_grad=False
+[train] 400 examples, 15 ep, lr=0.0002
+  [train] epoch 1/15  loss=1.6204
+  [train] epoch 2/15  loss=1.5894
+  [train] epoch 3/15  loss=1.5825
+  [train] epoch 4/15  loss=1.5757
+  [train] epoch 5/15  loss=1.5687
+  [train] epoch 6/15  loss=1.5580
+  [train] epoch 7/15  loss=1.5312
+  [train] epoch 8/15  loss=1.4796
+  [train] epoch 9/15  loss=1.3735
+  [train] epoch 10/15  loss=1.1995
+  [train] epoch 11/15  loss=0.9392
+  [train] epoch 12/15  loss=0.6357
+  [train] epoch 13/15  loss=0.3845
+  [train] epoch 14/15  loss=0.2339
+  [train] epoch 15/15  loss=0.1541
+  [save] final adapter -> <repo_root>/results\data\C3_deep_hidden\pythia-1.4b_random_real_hidden_L12_P4_s0\adapter\final
+
+[闸 1] base 权重 snapshot (训后):
+  [闸 1 ok] base 权重 sha256 训前后一致 (4 处采样)
+  [闸 4 ok] 磁盘 model.safetensors mtime 训前后一致
+
+[eval] FT held-out + trained ...
+  FT held-out: parse=0.57 pearson=0.1588449262656427 rsa=0.011766359320416229 p=0.5172413793103449
+  FT trained : parse=0.81 pearson=0.8901861503681128 rsa=0.9965090222091839 (记忆 check, 应高)
+
+[save] -> <repo_root>/results\data\C3_deep_hidden\pythia-1.4b_random_real_hidden_L12_P4_s0/summary.json + raw/ + adapter/
+[判据] FT held-out RSA / pearson 明显 > base held-out -> 学到可泛化读出

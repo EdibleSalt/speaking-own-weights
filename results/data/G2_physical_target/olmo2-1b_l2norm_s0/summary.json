@@ -1,0 +1,47 @@
+{
+  "model": "<repo_root>/models\\OLMo-2-0425-1B-Instruct",
+  "train_vocab": "random",
+  "target_mode": "real",
+  "target_source": "input_embed",
+  "target_layer": null,
+  "target_prompt": null,
+  "target_model": null,
+  "target_metric": "l2norm",
+  "eval_query_mode": "self",
+  "query_dict_path": null,
+  "seed": 0,
+  "pca_dim": 1,
+  "n_train": 400,
+  "n_test": 120,
+  "max_new": 250,
+  "tie_word_embeddings": false,
+  "base_heldout": {
+    "n_kept": 120,
+    "parse_rate": 1.0,
+    "scalar_pearson_r": -0.09725491508144454,
+    "scalar_spearman_r": -0.0586349724844191,
+    "rsa": -0.09725491508144454,
+    "rsa_p": 0.29485257371314344,
+    "per_word_pearson_mean": -0.09725491508144454
+  },
+  "lora_trainable_params": 24117248,
+  "embed_frozen": true,
+  "ft_heldout": {
+    "n_kept": 120,
+    "parse_rate": 1.0,
+    "scalar_pearson_r": 0.7764332884699108,
+    "scalar_spearman_r": 0.7874701414458871,
+    "rsa": 0.7764332884699108,
+    "rsa_p": 0.0004997501249375312,
+    "per_word_pearson_mean": 0.7764332884699108
+  },
+  "ft_trained": {
+    "n_kept": 400,
+    "parse_rate": 1.0,
+    "scalar_pearson_r": 0.9999992755395464,
+    "scalar_spearman_r": 0.9999946093267786,
+    "rsa": 0.9999992755395464,
+    "rsa_p": 0.0004997501249375312,
+    "per_word_pearson_mean": 0.9999992755395464
+  }
+}

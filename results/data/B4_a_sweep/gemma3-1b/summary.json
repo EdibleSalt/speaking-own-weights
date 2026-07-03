@@ -1,0 +1,26 @@
+{
+  "model": "models\\gemma-3-1b-it",
+  "n_fab": 16,
+  "k": 5,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "n_words_bank": 253,
+  "seeds": 1,
+  "mean_rsa": NaN,
+  "rsa_sd": NaN,
+  "p_values": [
+    NaN
+  ],
+  "n_sig": 0,
+  "per_seed": [
+    {
+      "seed": 0,
+      "n_kept": 0,
+      "avg_samples": 0.0,
+      "fab_cos": NaN,
+      "rsa": NaN,
+      "z": NaN,
+      "p": NaN
+    }
+  ]
+}
